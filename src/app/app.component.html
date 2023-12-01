@@ -1,0 +1,62 @@
+<div class="angular_post">
+  <h1> Angular POST</h1>
+<div class="input_section">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" />
+
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="username" />
+
+    <label for="email">Email</label>
+    <input type="text" id="email"  formControlName="email">
+
+    <label for="">Phone</label>
+    <input type="number" id="phone" formControlName="phone" >
+
+    <label for="website">Website</label>
+    <input type="text" id="website" formControlName="website">
+
+    <button type="submit" [disabled]="postForm.invalid">Submit</button>
+  </form>
+</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Website</th>
+  </tr>
+  <tr *ngFor="let post of posts">
+    <td>{{post.name}}</td>
+    <td>{{post.username}}</td>
+    <td>{{post.email}}</td>
+    <td>{{post.phone}}</td>
+    <td>{{post.website}}</td>
+  </tr>
+</table>
+
+<div>
+  <button (click)="getAllData()">Get All Data</button>
+
+  <label for="userIdInput">User ID:</label>
+  <input type="number" id="userIdInput" [(ngModel)]="userId" />
+  <button (click)="getUserData()">Get User Data</button>
+
+  <div *ngIf="allData.length > 0">
+    <h2>All Data:</h2>
+    <ul>
+      <li *ngFor="let data of allData">{{ data | json }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="userData">
+    <h2>User Data:</h2>
+    <p>{{ userData | json }}</p>
+  </div>
+</div>
+
+</div>
+
