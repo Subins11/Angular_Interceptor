@@ -28,6 +28,7 @@
     <th>Email</th>
     <th>Phone</th>
     <th>Website</th>
+    <th>Actions</th>
   </tr>
   <tr *ngFor="let post of posts">
     <td>{{post.name}}</td>
@@ -35,6 +36,10 @@
     <td>{{post.email}}</td>
     <td>{{post.phone}}</td>
     <td>{{post.website}}</td>
+    <td>
+      <button (click)="onUpdate(post)">Update</button>
+      <button (click)="onDelete(post)">Delete</button>
+    </td>
   </tr>
 </table>
 

@@ -15,6 +15,13 @@ export class PostServiceService {
       return this.http.post(this.apiUrl, recordData);
     }
   
+    update(recordId: number, updatedData: any): Observable<any> {
+      return this.http.put(`${this.apiUrl}/${recordId}`, updatedData);
+    }
+    
+    delete(recordId: number): Observable<any> {
+      return this.http.delete(`${this.apiUrl}/${recordId}`);
+    }
 }
 
 
