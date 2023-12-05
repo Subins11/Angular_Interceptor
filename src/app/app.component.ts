@@ -9,7 +9,7 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'angularPost';
+  title = 'angularHTTP';
 
   postForm!: FormGroup;
   posts: any[] = [];

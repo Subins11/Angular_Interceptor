@@ -7,21 +7,19 @@ import { Observable } from 'rxjs';
 })
 export class PostServiceService {
 
-    private apiUrl = 'https://jsonplaceholder.typicode.com/users';
-  
-    constructor(private http: HttpClient) {}
-  
-    post(recordData: any): Observable<any> {
-      return this.http.post(this.apiUrl, recordData);
-    }
-  
-    update(recordId: number, updatedData: any): Observable<any> {
-      return this.http.put(`${this.apiUrl}/${recordId}`, updatedData);
-    }
-    
-    delete(recordId: number): Observable<any> {
-      return this.http.delete(`${this.apiUrl}/${recordId}`);
-    }
+  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+  constructor(private http: HttpClient) {}
+
+  post(recordData: any): Observable<any> {
+    return this.http.post(this.apiUrl, recordData);
+  }
+
+  update(recordId: number, updatedData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${recordId}`, updatedData);
+  }
+
+  delete(recordId: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${recordId}`);
+  }
 }
-
-
